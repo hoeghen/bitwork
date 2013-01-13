@@ -1,0 +1,1 @@
+copy ".kill-run.app" ..
