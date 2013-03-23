@@ -20,6 +20,8 @@
 		<r:layoutResources />
 	</head>
 	<body>
+		<!--<g:render template="/menu"/>-->
+ 
 		<div class="row">
 			<div class="large-12 column">
 					<div id="banner" role="banner"><a href="http://geodeals.dk"><img src="${resource(dir: 'images', file: 'geodealsbanner.png')}" alt="Grails"/></a></div>
