@@ -4,31 +4,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta name="layout" content="main">
+<meta name="layout" content="scaffold">
 <g:set var="entityName"
 	value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
 <title><g:message code="default.list.label" args="[entityName]" /></title>
 </head>
 <body>
-	<a href="#list-${domainClass.propertyName}" class="skip" tabindex="-1">
-		<g:message code="default.link.skip.label"
-			default="Skip to content&hellip;" />
-	</a>
-	<section class="top-bar-section">
-		<!-- Right Nav Section -->
-		<ul class="right">
-			<li class="divider"></li>
-			<li><a class="home" href="\${createLink(uri: '/')}"><g:message
-						code="default.home.label" /></a></li>
-			<li class="divider"></li>
-			<li><g:link class="create" action="create">
-					<g:message code="default.new.label" args="[entityName]" />
-				</g:link></li>
-			<li class="divider"></li>
-			<li class="has-form"><a href="http://foundation.zurb.com/docs"
-				class="button">Login/Ny bruger</a></li>
-		</ul>
-	</section>
+	<a href="#list-${domainClass.propertyName}" class="skip" tabindex="-1"><g:message
+			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
 
 
 	<div id="list-${domainClass.propertyName}"
@@ -36,6 +19,10 @@
 		<h1>
 			<g:message code="default.list.label" args="[entityName]" />
 		</h1>
+		<g:link class="button" action="create">
+			<g:message code="default.new.label" args="[entityName]" />
+		</g:link>
+
 		<g:if test="\${flash.message}">
 			<div class="message" role="status">\${flash.message}</div>
 		</g:if>
@@ -77,6 +64,5 @@
 		<div class="pagination">
 			<g:paginate total="\${${propertyName}Total}" />
 		</div>
-	</div>
 </body>
 </html>

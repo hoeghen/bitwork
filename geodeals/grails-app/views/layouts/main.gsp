@@ -14,18 +14,18 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'geodeals.css')}" type="text/css">
 		<r:require module="foundation" />
-		<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
+		<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
 		<g:layoutHead/>
 		<r:layoutResources />
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'geodeals.css')}" type="text/css">
 	</head>
 	<body>
-		<g:render template="/menu"/>
+		<g:render template="/menu/menu"/>
 		<g:layoutBody/>
 
-	<div id="copyright" class="footer" role="contentinfo">
-		<div class="row full-width">
+ 	<div id="copyright" class="footer" role="contentinfo">
+		<div class="row">
 			<div class="large-4 columns">
 				<p><iframe
 							src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgeodeal.dk&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"

@@ -7,7 +7,7 @@ class UrlMappings {
 			}
 		}
 
-		"/"(view:"/index")
+		"/"(controller:"staticView",action:"welcome")
 		"500"(view:'/error')
 		"/$action"(controller:"staticView")
 		
