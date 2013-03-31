@@ -14,22 +14,36 @@
 		<link rel="apple-touch-icon" sizes="114x114" href="${resource(dir: 'images', file: 'apple-touch-icon-retina.png')}">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css')}" type="text/css">
 		<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css')}" type="text/css">
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'geodeals.css')}" type="text/css">
 		<r:require module="foundation" />
-		
+		<link href='http://fonts.googleapis.com/css?family=Orbitron' rel='stylesheet' type='text/css'>
 		<g:layoutHead/>
 		<r:layoutResources />
 	</head>
 	<body>
 		<g:render template="/menu"/>
- 		<div class="row">
-			<div class="large-6 large-centered column">
-					<a href="http://geodeals.dk"><img src="${resource(dir: 'images', file: 'geodealsbanner.png')}" alt="Grails"/></a>
-			</div>	
-			<hr>
-		</div>	
 		<g:layoutBody/>
-		<div class="footer" role="contentinfo"></div>
-		<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
+
+	<div id="copyright" class="footer" role="contentinfo">
+		<div class="row full-width">
+			<div class="large-4 columns">
+				<p><iframe
+							src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fgeodeal.dk&amp;send=false&amp;layout=button_count&amp;width=450&amp;show_faces=false&amp;font&amp;colorscheme=light&amp;action=like&amp;height=21"
+							scrolling="no" frameborder="0"
+							style="border: none; overflow: hidden; width: 450px; height: 21px;"
+							allowTransparency="true"></iframe></p>
+			</div>
+			<div class="large-8 columns">
+				<ul class="inline-list right">
+					<li>Site content &copy; Bitwork, smba.
+					</li>
+					<li>bitwork@gmail.com</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+
+	<div id="spinner" class="spinner" style="display:none;"><g:message code="spinner.alt" default="Loading&hellip;"/></div>
 		<g:javascript library="application"/>
 		<r:layoutResources />
 	</body>

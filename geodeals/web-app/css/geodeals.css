@@ -1,0 +1,18 @@
+/* FONT STACK */
+body,
+input, select, textarea {
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+h1 {
+	font-family: 'Orbitron', sans-serif;
+}
+
+#geodealsbanner{
+	font-family: 'Orbitron', sans-serif;
+}
+
+.footer {
+	color: white;
+	background-color: black
+}
