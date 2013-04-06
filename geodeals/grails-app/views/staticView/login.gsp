@@ -9,9 +9,10 @@
 	<div class="body">
 		<div class="row">
 			<div class="large-8 large-centered columns">
-				<h1>Administrer</h1>
-				<p>Du kan oprette, ændre eller slette dine butikker og deals.</p>
-				<p><g:link class="button" controller="shop" action="list">Butik(er)</g:link><g:link class="button" controller="deal" action="list">Deals</g:link></p>
+				<h1>Login</h1>
+				<p>email</p>
+				<p>password</p>
+				<p><g:link class="button" controller="shop" action="list">Login</g:link></p>
 			</div>
 		</div>
 	</div>
