@@ -4,12 +4,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
 <meta name="layout" content="main" />
 <title>welcome</title>
-<%@ page import="com.bitwork.geodeals.menu.MenuItem" %>
 </head>
 <body>
-	<%def menuItem = [new MenuItem(label:'opret butik',ref:'salg'),new MenuItem(label:'find et tilbud',ref:'browse')] %>
-	<g:set var="pagemenu" value="${menuItem}" scope = "request"/>
 	<div class="body">
+	
 				<div class="row">
 					<div class="large-6 columns">
 						<div class="panel">
@@ -62,6 +60,14 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="large-6 large-centered columns" style="text-align:center">
+						<g:link class="button" action="browse">Start</g:link>
+					
+					</div>
+				</div>
+
 	</div>
 
 </body>

@@ -1,66 +1,28 @@
-
 <% import grails.persistence.Event %>
 <%=packageName%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta name="layout" content="scaffold">
-<g:set var="entityName"
-	value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
-<title><g:message code="default.list.label" args="[entityName]" /></title>
-</head>
-<body>
-
-<nav class="top-bar">
-	<ul class="title-area">
-		<!-- Title Area -->
-		<li class="name">
-		
-		<g:link controller="staticView" action="welcome">
-		welcome 
-				</g:link></li>
-		<!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-		<li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-	</ul>
-	<section class="top-bar-section">
-		<!-- Right Nav Section -->
- 
-	
-		<ul class="right">
-			<li class="divider"></li>
-  			<li><a href="\">Home</a></li>
-			<li class="divider"></li>
-  			<li><g:link class="button" action="create">  Create</g:link></li>
-			<li class="has-form"><a href="http://foundation.zurb.com/docs"
-				class="button">Login/Ny bruger</a></li>
-		</ul>
-	</section>
-</nav>
-
-
-
-
-	
-
-	<a href="#list-${domainClass.propertyName}" class="skip" tabindex="-1"><g:message
-			code="default.link.skip.label" default="Skip to content&hellip;" /></a>
-
-
-	<div id="list-${domainClass.propertyName}"
-		class="content scaffold-list" role="main">
-		<h1>
-			<g:message code="default.list.label" args="[entityName]" />
-		</h1>
-		<g:link class="button" action="create">
-			<g:message code="default.new.label" args="[entityName]" />
-		</g:link>
-
-		<g:if test="\${flash.message}">
+	<head>
+		<meta name="layout" content="main">
+		<g:set var="entityName" value="\${message(code: '${domainClass.propertyName}.label', default: '${className}')}" />
+		<title><g:message code="default.list.label" args="[entityName]" /></title>
+	</head>
+	<body>
+		<a href="#list-${domainClass.propertyName}" class="skip" tabindex="-1"><g:message code="default.link.skip.label" default="Skip to content&hellip;"/></a>
+		<div class="nav" role="navigation">
+			<ul>
+				<li><a class="home" href="\${createLink(uri: '/')}"><g:message code="default.home.label"/></a></li>
+				<li><g:link class="create" action="create"><g:message code="default.new.label" args="[entityName]" /></g:link></li>
+			</ul>
+		</div>
+		<div id="list-${domainClass.propertyName}" class="content scaffold-list" role="main">
+			<h1><g:message code="default.list.label" args="[entityName]" /></h1>
+			<g:if test="\${flash.message}">
 			<div class="message" role="status">\${flash.message}</div>
-		</g:if>
-		<table>
-			<thead>
-				<tr>
+			</g:if>
+			<table>
+				<thead>
+					<tr>
 					<%  excludedProps = Event.allEvents.toList() << 'id' << 'version'
 						allowedNames = domainClass.persistentProperties*.name << 'dateCreated' << 'lastUpdated'
 						props = domainClass.properties.findAll { allowedNames.contains(it.name) && !excludedProps.contains(it.name) && it.type != null && !Collection.isAssignableFrom(it.type) }
@@ -72,13 +34,12 @@
 					<%      } else { %>
 						<g:sortableColumn property="${p.name}" title="\${message(code: '${domainClass.propertyName}.${p.name}.label', default: '${p.naturalName}')}" />
 					<%  }   }   } %>
-				</tr>
-			</thead>
-			<tbody>
-				<g:each in="\${${propertyName}List}" status="i"
-					var="${propertyName}">
+					</tr>
+				</thead>
+				<tbody>
+				<g:each in="\${${propertyName}List}" status="i" var="${propertyName}">
 					<tr class="\${(i % 2) == 0 ? 'even' : 'odd'}">
-						<%  props.eachWithIndex { p, i ->
+					<%  props.eachWithIndex { p, i ->
 							if (i == 0) { %>
 						<td><g:link action="show" id="\${${propertyName}.id}">\${fieldValue(bean: ${propertyName}, field: "${p.name}")}</g:link></td>
 					<%      } else if (i < 6) {
@@ -91,10 +52,11 @@
 					<%  }   }   } %>
 					</tr>
 				</g:each>
-			</tbody>
-		</table>
-		<div class="pagination">
-			<g:paginate total="\${${propertyName}Total}" />
+				</tbody>
+			</table>
+			<div class="pagination">
+				<g:paginate total="\${${propertyName}Total}" />
+			</div>
 		</div>
-</body>
+	</body>
 </html>

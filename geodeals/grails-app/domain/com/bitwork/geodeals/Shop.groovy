@@ -11,7 +11,7 @@ class Shop {
 	static constraints = {
 		shopnavn(blank:false)
 		vejnavn()
-		husnummer(display:false)
-		postnummer(display:false)
+		husnummer()
+		postnummer()
 	}
 }

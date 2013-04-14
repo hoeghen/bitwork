@@ -22,7 +22,20 @@
 
 </head>
 <body>
-	<g:render template="/menu/menu" />
+	<g:menu>
+		<g:item  controller="staticView" action="welcome">forside</g:item>
+		<g:item  controller="staticView" action="salg">opret butik</g:item>
+		<g:item  controller="staticView" action="browse">find et tilbud</g:item>
+	</g:menu>
+	
+	<div id="banner">
+		<g:link controller="staticView" action="welcome">
+			<img height="20"
+				src="${resource(dir: 'images', file: 'geodeal-white-red.png')}"
+				alt="Grails" style={position:absolute;z-index:1}/>
+		</g:link>
+	</div>
+	
 	<g:layoutBody />
 	<div id="spinner" class="spinner" style="display: none;">
 		<g:message code="spinner.alt" default="Loading&hellip;" />
